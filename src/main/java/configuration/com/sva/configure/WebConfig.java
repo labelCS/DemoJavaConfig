@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
@@ -43,6 +44,7 @@ import com.sva.web.auth.AuthInterceptor;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages={"com.sva"})
+@ImportResource("classpath:quartz-config.xml")
 public class WebConfig extends WebMvcConfigurerAdapter
 {
     /** 

@@ -23,7 +23,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  *  
  */
 @Configuration
-@ComponentScan(basePackages={"com.sva"}, excludeFilters={@Filter(type=FilterType.ANNOTATION, value=EnableWebMvc.class)})
+//@ComponentScan(basePackages={"com.sva"}, excludeFilters={@Filter(type=FilterType.ANNOTATION, value=EnableWebMvc.class)})
 @Import(DataAccessConfig.class)
 public class RootConfig
 {
