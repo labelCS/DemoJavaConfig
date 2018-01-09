@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -33,7 +32,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *  
  */
 @Configuration
-@PropertySource("classpath:db.properties")
+@PropertySource({"classpath:db.properties","classpath:sva.properties"})
 @MapperScan(basePackages="com.sva.dao")
 @EnableTransactionManagement
 public class DataAccessConfig

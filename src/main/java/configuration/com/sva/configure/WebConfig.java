@@ -13,12 +13,9 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.MultipartResolver;
@@ -141,11 +138,7 @@ public class WebConfig extends WebMvcConfigurerAdapter
      */
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
-        PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
-        Resource[] resources = new ClassPathResource[]{ new ClassPathResource( "sva.properties" ) };
-        configurer.setLocations(resources);
-        configurer.setIgnoreUnresolvablePlaceholders(true);
-        return configurer;
+        return new PropertySourcesPlaceholderConfigurer();
     }
     
     /* (非 Javadoc) 
